@@ -13,21 +13,6 @@ const DANO_BASE = 105
 const NOME_ARMADURA = "Tunica do Desespero"
 const DEFESA_BASE = 21
 
-//3 Aplicação de Operadores de Atribuição 
-xp += 150
-moedas -= 30
-vida += 40
-DANO_BASE * 2
-
-//4  Cálculo de Atributos Finais
-let ataqueTotal = nivel + DANO_BASE
-let defesaTotal = DEFESA_BASE + (nivel / 2)
-
-//5 Avaliação de Prontidão com Operadores Lógicos
-let vidaSuficiente = vida > 70
-let ataqueForte = ataqueTotal > 60
-let nivelAvancado = nivel >= 10
-let podeEnfrentarGuardiao = vidaSuficiente && (ataqueForte || nivelAvancado)
 
 //lore
 console.log(`📖Lore de: ${nome}`);
@@ -64,5 +49,18 @@ if(moedas >= 55){
 //verificação de classe
 if(classe === "Mago"){
     console.log(`- A floresta abre caminho para ${nome} voltar`)
+}
+console.log(" ")
+console.log(" ")
+
+//Capitulo 2
+console.log("💵Capitulo 2 - Loja dos Bytes")
+console.log(" ")
+
+//Escolha Baseada em Recursos
+if(moedas >= 50){
+    console.log(`${nome} compra uma poção de Xp`)
+    xp += 25
+   
 }
 
