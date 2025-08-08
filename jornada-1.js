@@ -59,8 +59,28 @@ console.log(" ")
 
 //Escolha Baseada em Recursos
 if(moedas >= 50){
-    console.log(`${nome} compra uma poção de Xp`)
-    xp += 25
-   
+    console.log(`- ${nome} compra uma poção de Xp `)
+    xp += 25  
+    moedas -= 50
+    console.log(`- xp = ${xp}`)
+    console.log(`- moedas = $${moedas}`)
+} else {
+    console.log(`- Você não tem moedas o suficiente`)
 }
+
+if(xp >= 100){
+    nivel ++;
+    console.log(`- ${nome} subiu de nível!!`)
+    xp = 0
+
+} else if (xp >= 100 && classe === "Mago"){
+    mana += 500
+
+} else {
+    console.log(`- ${nome} ainda não evoluiu`)
+}
+console.log(" ")
+console.log(" ")
+
+//Capítulo 3
 
