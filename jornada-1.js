@@ -1,5 +1,5 @@
 //1 Criação das Variaveis Principais
-let nome = "Vacivus Anonymous"
+let nome = "Vacivus"
 let classe = "Mago"
 let nivel = 10
 let vida = 100
@@ -156,3 +156,45 @@ if(vidaHacker <= 0){
     console.log(`- XP = ${xp}`)
     console.log(`- moedas = ${moedas}`)
 }
+
+//Continuação - Nível 3
+//inevntário mágico
+let inventario = ["Poção de cura", "Poção de XP", " Cristal Mágico (azul)", "Couro de Cabra"];
+let aliados = ["Ziegfried, o guerreiro", "Mohg, o mago de virus", "Claudinei do Pneu"];
+let inimigosEncontrados = ["Gárgula da Torre", "Goblin Absoluto", "Esqueleto Dourado", "Cavaleiro do Trono"];
+let salasDoCastelo = ["Torre do sino", "Cemitério", "Cadeia da Perdição", "Sala do Trono","Salão Principal"];
+let artefato = [];
+console.log(" ")
+console.log(" ")
+console.log(`-🎇 Ruínas de Algorithimia-`)
+console.log(`Após os acontecimentos anteriores, ${nome} finalmente vai as antigas ruínas onde tanto queria.`)
+console.log(`O mago, com sua Magia, descobre que as ruínas não passam de uma ilusão, que esconde o seu tão procurado artefato.`)
+console.log(`${nome}, juntamente com seus amigos ${aliados.join(" ;")} adentram o castelo misterioso.`)
+console.log(" ")
+console.log(`Inventário: ${inventario}`)
+console.log(" ")
+
+//Capitulo 1
+console.log(`🔒 Capitulo 1: Salão de Báus`)
+console.log(" ")
+
+let itensEncontrados = ["Cristal Mágico (verde)", "30 moedas","Espada VPN"]
+console.log(`- Primeiro item encontrado: ${itensEncontrados[0]}`);
+console.log(`- Todos os Itens achados de inicio: ${itensEncontrados.join(" ,")} `)
+moedas += 30
+
+//substituição
+inventario[2] = "Cristal Mágico Encantado";
+console.log(`- ${nome} utilizou os cristais para criar um ${inventario[2]}!`);
+
+//push
+inventario.push("30 moedas")
+moedas += 30
+console.log(`Adcionado a seu inventário: ${inventario}`)
+
+let itemRemovido = inventario.pop()
+console.log(`item removido: ${itemRemovido}`)
+console.table(inventario)
+console.log("")
+
+//Capitulo 2

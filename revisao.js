@@ -2,7 +2,7 @@
 let vida = 60;
 let energia = 40;
 let xp = 800;
-let ouro = 200;
+let ouro = 350;
 let nivel = 3;
 
 //Parte 1 - Estado de Saúde
@@ -37,4 +37,18 @@ if(ouro >= 300){
     console.log("Ayla não tem ouro suficiente")
 }
 
+//For 
+//listar os numeros de 1 a 20
+for (let i = 1; i <= 20; i++) {
+    console.log(i);
+}
 
+//Criando um inventário para Ayla
+let inventario = ["Poção de cura", "Espada de fogo", "Mapa", "Chave", "Anel da invisibilidade"]
+
+//mostrando os itens do inventario
+console.log(`Inventario de Ayla`)
+//length pegamos o tamanho do array
+for (let i = 0; i < inventario.length; i++){
+    console.log(`- ${inventario[i]}`)
+}
