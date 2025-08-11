@@ -161,8 +161,8 @@ if(vidaHacker <= 0){
 //inevntário mágico
 let inventario = ["Poção de cura", "Poção de XP", " Cristal Mágico (azul)", "Couro de Cabra"];
 let aliados = ["Ziegfried, o guerreiro", "Mohg, o mago de virus", "Claudinei do Pneu"];
-let inimigosEncontrados = ["Gárgula da Torre", "Goblin Absoluto", "Esqueleto Dourado", "Cavaleiro do Trono"];
-let salasDoCastelo = ["Torre do sino", "Cemitério", "Cadeia da Perdição", "Sala do Trono","Salão Principal"];
+let inimigosEncontrados = ["Gárgula da Torre", "Esqueleto Dourado", "Cavaleiro do Trono"];
+let salasDoCastelo = ["Torre do sino", "Cemitério", "Sala do Trono","Salão Principal"];
 let artefato = [];
 console.log(" ")
 console.log(" ")
@@ -195,6 +195,39 @@ console.log(`Adcionado a seu inventário: ${inventario}`)
 let itemRemovido = inventario.pop()
 console.log(`item removido: ${itemRemovido}`)
 console.table(inventario)
+console.table(itensEncontrados)
 console.log("")
 
-//Capitulo 2
+//Capitulo 2 exploração
+console.log(" ");
+console.log(`🗺️ Capítulo 2 - Explorando o castelo `);
+console.log(" ")
+//explorar cada sala do castelo 
+console.log(`Começando a exploração das ${salasDoCastelo.length} salas do castelo`);
+
+for(let i = 0; i < salasDoCastelo.length; i++){
+    console.log(`- Sala ${(i + 1)}: ${salasDoCastelo[i]}`)
+
+if( i === 0){
+    console.log(`${nome} encontra um inimigo, que o bate e some!`)
+    vida -= 10
+} else if(i === 1){
+    console.log(`${nome} encontra tesouros expalhados!`)
+    itensEncontrados.push("20 Moedas")
+    moedas += 20
+} else if (i === 2){
+    console.log(`${nome} encontra a Coroa Scriptada`)
+    itensEncontrados.push("Coroa Scriptada")
+} else {
+    console.log(`${nome} encontra um Livro de Magia da Deep Web`)
+    xp += 25
+}
+}
+console.log(" ")
+console.log(`- Fim da exploração!`)
+console.log(`- Vida: ${vida}`)
+console.log(`- Xp: ${xp}`)
+console.log(`- Moedas: ${moedas}`)
+
+//Capitulo 3
+
