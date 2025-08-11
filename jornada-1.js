@@ -248,7 +248,7 @@ for (let i = 0; i< aliados.length; i++){
     //cada posição no array
     if (i === 0){
         console.log(`- Como aliado guerreiro, ${aliado} adiciona poder ao grupo`)
-        DanoBonus += 30
+        DanoBonus = 30
         console.log(" ")
     } else if (i === 1){
         console.log(`- Aliado ${aliado}, como mago, adiciona mana ao grupo`)
@@ -272,4 +272,20 @@ console.log(`🐲 Capítulo Final - Ultma Batalha`)
 console.log(" ")
 
 //sistema de batalha usando array e for tradicional
+let  inimigosBatalha = inimigosEncontrados
+let danoRecebido = []
+console.log(`☠️ ${nome} enfrenta ${inimigosBatalha.length} inimigos`)
 
+//batalha usando for 
+for (let i = 0; i < inimigosBatalha.length; i++) {
+    let inimigo = inimigosBatalha[i];
+    let dano = Math.floor(Math.random() * 30) + 10; // dano entre 10 e 39
+
+    console.log(`Rodada: ${(i + 1)} enfrentando: ${inimigo}` )
+    console.log(`- ${nome} causa ${DANO_BASE} de dano 🔥`)
+    
+
+
+
+
+}
