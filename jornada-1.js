@@ -11,6 +11,7 @@ let xp = 0
 const NOME_ARMA = "Amuleto de Comando"
 const DANO_BASE = 105
 let DanoBonus = 0
+let danoTotal = DANO_BASE + DanoBonus
 const NOME_ARMADURA = "Tunica do Desespero"
 const DEFESA_BASE = 21
 
@@ -177,7 +178,7 @@ console.log(" ")
 //Capitulo 1
 console.log(`🔒 Capitulo 1: Salão de Báus`)
 console.log(" ")
-
+//criando array 
 let itensEncontrados = ["Cristal Mágico (verde)", "30 moedas","Espada VPN"]
 console.log(`- Primeiro item encontrado: ${itensEncontrados[0]}`);
 console.log(`- Todos os Itens achados de inicio: ${itensEncontrados.join(" ,")} `)
@@ -191,7 +192,7 @@ console.log(`- ${nome} utilizou os cristais para criar um ${inventario[2]}!`);
 inventario.push("30 moedas")
 moedas += 30
 console.log(`Adcionado a seu inventário: ${inventario}`)
-
+//pop
 let itemRemovido = inventario.pop()
 console.log(`item removido: ${itemRemovido}`)
 console.table(inventario)
@@ -205,22 +206,27 @@ console.log(" ")
 //explorar cada sala do castelo 
 console.log(`Começando a exploração das ${salasDoCastelo.length} salas do castelo`);
 
+//utilizando for para explorar cada sala do castelo
 for(let i = 0; i < salasDoCastelo.length; i++){
     console.log(`- Sala ${(i + 1)}: ${salasDoCastelo[i]}`)
 
 if( i === 0){
-    console.log(`${nome} encontra um inimigo, que o bate e some!`)
+    console.log(` ${nome} encontra um inimigo, que o bate e some!`)
     vida -= 10
+    console.log("")
 } else if(i === 1){
     console.log(`${nome} encontra tesouros expalhados!`)
     itensEncontrados.push("20 Moedas")
     moedas += 20
+    console.log("")
 } else if (i === 2){
     console.log(`${nome} encontra a Coroa Scriptada`)
     itensEncontrados.push("Coroa Scriptada")
+    console.log("")
 } else {
     console.log(`${nome} encontra um Livro de Magia da Deep Web`)
     xp += 25
+    console.log("")
 }
 }
 console.log(" ")
@@ -230,4 +236,40 @@ console.log(`- Xp: ${xp}`)
 console.log(`- Moedas: ${moedas}`)
 
 //Capitulo 3
+console.log(" ")
+console.log(`⚔️ Capítulo 3 - União`)
+console.log(" ")
+console.log(`${nome} chama seus aliados, por presentir m perigo eminente... `)
+//recrutando aliados com for
+for (let i = 0; i< aliados.length; i++){
+    let aliado = aliados[i]
+    console.log(`Aliado ${(i + 1)}: ${aliado} se junta a missão`)
+
+    //cada posição no array
+    if (i === 0){
+        console.log(`- Como aliado guerreiro, ${aliado} adiciona poder ao grupo`)
+        DanoBonus += 30
+        console.log(" ")
+    } else if (i === 1){
+        console.log(`- Aliado ${aliado}, como mago, adiciona mana ao grupo`)
+        mana += 30
+        console.log(" ")
+    } else{
+        console.log(`- Aliado ${aliado} motiva a equipe`)
+        vida += 22
+        console.log(" ")
+    }
+}
+
+console.log(`Equipe Completa:`)
+console.log(`Dano Total: ${danoTotal}`)
+console.log(`Mana: ${mana}`)
+console.log(`Vida: ${vida}`)
+console.log(" ")
+
+//Capítulo 4 Batalha Final 
+console.log(`🐲 Capítulo Final - Ultma Batalha`)
+console.log(" ")
+
+//sistema de batalha usando array e for tradicional
 
