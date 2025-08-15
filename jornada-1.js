@@ -6,6 +6,7 @@ let vida = 100
 let mana = 50
 let moedas = 100
 let xp = 0
+let tesouroColetado = []
 
 //2 Definição de Constantes Mágicas
 const NOME_ARMA = "Amuleto de Comando"
@@ -279,13 +280,32 @@ console.log(`☠️ ${nome} enfrenta ${inimigosBatalha.length} inimigos`)
 //batalha usando for 
 for (let i = 0; i < inimigosBatalha.length; i++) {
     let inimigo = inimigosBatalha[i];
-    let dano = Math.floor(Math.random() * 30) + 10; // dano entre 10 e 39
+    let dano = Math.floor(Math.random() * 30) + 10; 
 
     console.log(`Rodada: ${(i + 1)} enfrentando: ${inimigo}` )
     console.log(`- ${nome} causa ${DANO_BASE} de dano 🔥`)
     
+    danoRecebido.push(dano); 
 
-
-
-
+if (i === 0) {
+console.log("💎 Primeira vitória! Gárgula solta seus Cristais Mágicos!");
+tesouroColetado.push("Fragmento de Cristal");
+} else if (i === 1) {
+console.log("🌑 Segunda batalha! O esqueleto concentra seu poder!, mas " + nome + " resiste!");
+vida -= 15;
+} else {
+console.log("🔥 Batalha final! O Cavaleiro cai! Vitória épica alcançada!");
+xp += 100;
+tesouroColetado.push("Coroa do Poder");
 }
+
+danoTotal = 0;
+for (let i = 0; i < danoRecebido.length; i++) {
+danoTotal += danoRecebido[i];
+console.log("📊 Rodada " + (i + 1) + " - Dano: " + danoRecebido[i]);
+}
+
+console.log("⚡ Dano total causado: " + danoTotal);
+console.log("🏆 Tesouros coletados: " + tesouroColetado.length + " itens épicos!");
+}
+
